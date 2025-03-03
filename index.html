@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trading Journal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Logo Section -->
+  <div class="logo-container">
+    <img src="https://assets.onecompiler.app/43ac9brbf/43ac9cbyd/skill-centric-png-logo-1024x224.png" alt="Trading Journal Logo">
+  </div>
+
+  <div class="container">
+    <!-- Trade Submission Form -->
+    <div class="form-container">
+      <h2>Submit Your Trade</h2>
+      <form id="tradeForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="batch">Batch Number:</label>
+        <input type="text" id="batch" required>
+
+        <label for="pair">Pair:</label>
+        <select id="pair" required>
+          <option value="XAUUSD">XAUUSD</option>
+          <option value="XAGUSD">XAGUSD</option>
+          <option value="XTIUSD">XTIUSD</option>
+          <option value="XBRUSD">XBRUSD</option>
+          <option value="XNGUSD">XNGUSD</option>
+          <option value="EURUSD">EURUSD</option>
+          <option value="EURGBP">EURGBP</option>
+          <option value="EURJPY">EURJPY</option>
+          <option value="GBPUSD">GBPUSD</option>
+          <option value="GBPJPY">GBPJPY</option>
+          <option value="USDJPY">USDJPY</option>
+          <option value="USDCAD">USDCAD</option>
+          <option value="US30">US30</option>
+          <option value="US500">US500</option>
+          <option value="NAS100">NAS100</option>
+          <option value="UK100">UK100</option>
+          <option value="GER40">GER40</option>
+          <option value="BTCUSD">BTCUSD</option>
+        </select>
+
+        <label for="position">Position:</label>
+        <select id="position" required>
+          <option value="BUY" selected>BUY</option>
+          <option value="SELL">SELL</option>
+        </select>
+
+        <label for="entry">Entry Price:</label>
+        <input type="number" id="entry" step="0.01" required>
+
+        <label for="sl">Stop Loss:</label>
+        <input type="number" id="sl" step="0.01" required>
+
+        <label for="tp1">Take Profit 1:</label>
+        <input type="number" id="tp1" step="0.01" required>
+
+        <label for="tp2">Take Profit 2:</label>
+        <input type="number" id="tp2" step="0.01" required>
+
+        <label for="tp3">Take Profit 3:</label>
+        <input type="number" id="tp3" step="0.01" required>
+
+        <button type="submit">Submit Trade</button>
+      </form>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="admin-container">
+      <h2>Admin Panel</h2>
+      <table id="tradeTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Batch</th>
+            <th>Pair</th>
+            <th>Position</th>
+            <th>Entry</th>
+            <th>Stop Loss</th>
+            <th>TP 1</th>
+            <th>TP 2</th>
+            <th>TP 3</th>
+            <th>RR</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Leaderboard -->
+    <div class="leaderboard-container">
+      <h2>Leaderboard</h2>
+      <table id="leaderboard">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Batch</th>
+            <th>Pair</th>
+            <th>Buy</th>
+            <th>Sell</th>
+            <th>Wins</th>
+            <th>Loses</th>
+            <th>Win %</th>
+            <th>Avg RR Ratio</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
