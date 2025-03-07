@@ -94,12 +94,12 @@ button.delete:hover {
   color: #cc0000;
 }
 
-td.status-pass {
+td.status-profit {
   color: #28a745;
   font-weight: bold;
 }
 
-td.status-fail {
+td.status-loss {
   color: #dc3545;
   font-weight: bold;
 }
