@@ -71,6 +71,13 @@ function addTrade(event) {
   document.getElementById('tradeForm').reset();
 }
 
+// Function to delete a trade
+function deleteTrade(index) {
+  trades.splice(index, 1); // Remove the trade from the array
+  saveTrades(); // Save the updated trades to local storage
+  renderTrades(); // Re-render the table
+}
+
 // Function to render trades in the admin table
 function renderTrades() {
   const tbody = document.querySelector('#tradeTable tbody');
@@ -91,9 +98,10 @@ function renderTrades() {
       <td>${trade.rr}</td>
       <td class="status-${trade.status.toLowerCase()}">${trade.status}</td>
       <td>
-        <button class="pass" onclick="markAsPass(${index})">Pass</button>
-        <button class="fail" onclick="markAsFailed(${index})">Fail</button>
+        <button class="pass" onclick="markAsPass(${index})">Profit</button>
+        <button class="fail" onclick="markAsFailed(${index})">Loss</button>
       </td>
+      <td><button class="delete" onclick="deleteTrade(${index})">X</button></td> <!-- Delete (X) button in its own column -->
     `;
     tbody.appendChild(row);
   });
