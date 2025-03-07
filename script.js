@@ -111,14 +111,14 @@ function renderTrades() {
 
 // Function to mark a trade as Pass
 function markAsPass(index) {
-  trades[index].status = 'Pass';
+  trades[index].status = 'Profit';
   saveTrades(); // Save trades to local storage
   renderTrades();
 }
 
 // Function to mark a trade as Failed
 function markAsFailed(index) {
-  trades[index].status = 'Failed';
+  trades[index].status = 'Loss';
   saveTrades(); // Save trades to local storage
   renderTrades();
 }
@@ -144,10 +144,10 @@ function updateLeaderboard() {
     } else if (trade.position === 'SELL') {
       leaderboard[trade.name].sell += 1;
     }
-    if (trade.status === 'Pass') {
+    if (trade.status === 'Profit') {
       leaderboard[trade.name].wins += 1;
       leaderboard[trade.name].totalRR += parseFloat(trade.rr);
-    } else if (trade.status === 'Failed') {
+    } else if (trade.status === 'Loss') {
       leaderboard[trade.name].loses += 1;
     }
   });
